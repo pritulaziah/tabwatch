@@ -1,0 +1,33 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out the repository
+        uses: actions/checkout@v7
+      - name: Set up Node.js
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+      - name: Install the dependencies
+        run: npm ci
+      - name: Check the formatting
+        run: npm run format:check
+      - name: Lint the project
+        run: npm run lint
+      - name: Type-check the project
+        run: npm run typecheck
+      - name: Run the tests
+        run: npm test
+      - name: Build the extension
+        run: npm run build

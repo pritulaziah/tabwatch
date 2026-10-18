@@ -1,0 +1,18 @@
+{
+  "manifest_version": 3,
+  "name": "TabWatch",
+  "version": "0.1.0",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAnHJczg9H6/8DahTBupNTmb+CejhcBjsaMViHDBgTVXHppkBd2sT5LWOz29VHaoNh/D1FxsQBHto48c4UThgIbbYOsIam4CuoJNqT6pSLUqzz5MjyjMzDndAKzGrP9nTCg9LJfZp30+4AUv+ys8Xn6KNRC+UQliIxr/qloF0x4W50oMEg6J4s7bbi1n6d7SfEeTyCHYwlfMjTM11VFHcYPCpNXX06FjtbXSgghaiAmPqOAjksl9v9QrRbSzAeQbRDFOkcLdPHDPQX6vG4RiYMt38VS5V5ROHqNNvHzyRyMqW7GcKnr1yEjyAdJDF8uk54H+biB4k2cHtRX0J71se22wIDAQAB",
+  "description": "Tracks time spent on sites by domain. Data stays on your machine.",
+  "minimum_chrome_version": "120",
+  "permissions": ["tabs", "storage", "unlimitedStorage", "alarms", "webNavigation", "favicon"],
+  "background": { "service_worker": "background.js", "type": "module" },
+  "action": { "default_popup": "index.html" },
+  "options_ui": { "page": "dashboard.html", "open_in_tab": true },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  }
+}
